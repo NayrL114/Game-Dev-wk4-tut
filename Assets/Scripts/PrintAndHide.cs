@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConsolePrint : MonoBehaviour
+public class PrintAndHide: MonoBehaviour
 {
 
     public string objName;
     public int i;
+    public Renderer rend;
+
     
     // Start is called before the first frame update
     void Start()
