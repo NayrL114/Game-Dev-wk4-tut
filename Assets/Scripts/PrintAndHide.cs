@@ -5,7 +5,7 @@ using UnityEngine;
 public class PrintAndHide: MonoBehaviour
 {
 
-    public string objName;
+    public GameObject redObj;// red ball is assigned into this script manually in Unity
     public int i;
     public Renderer rend;
     public int blueHide;
@@ -17,11 +17,12 @@ public class PrintAndHide: MonoBehaviour
 
         blueHide = Random.Range(200, 250);// generate a random int between 200 to 250
         
-        if (this.tag == "Blue")// print out the real value for blue ball to deactivate
+        if (this.tag == "Blue")// get the renderer for blue ball and print out the real value for blue ball to deactivate
         {
+            rend = GetComponent<MeshRenderer>();
             Debug.Log("blueHide is " + blueHide);
         }
-        
+                
     }
 
     // Update is called once per frame
@@ -31,14 +32,11 @@ public class PrintAndHide: MonoBehaviour
         Debug.Log(this.name + ":" + i);// print out the required name and frame. Format (objName: i);
         
         if (this.tag == "Red" & i == 100){// deactivate read ball on 100th frame
-            //this.SetActive(false); 
-            //GameObject.Find("Red").SetActive(false);
-            //rend.SetActive(false);
+            redObj.SetActive(false); 
         }
         
-        if (this.tag == "Blue" & i == blueHide){// deactive blue ball on "blueHide"th frame
-            //this.SetActive(false);
-            //GameObject.Find("Blue").SetActive(false);
+        if (this.tag == "Blue" & i == blueHide){// deactive blue ball renderer on "blueHide"th frame
+            rend.enabled = !rend.enabled;
         }
         
     }

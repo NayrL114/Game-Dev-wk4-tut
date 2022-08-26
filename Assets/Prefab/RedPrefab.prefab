@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3023fd386a229944697169507ff35680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objName: 
+  redObj: {fileID: 8921786629535681313}
   i: 0
   rend: {fileID: 6276332440576929528}
+  blueHide: 0
